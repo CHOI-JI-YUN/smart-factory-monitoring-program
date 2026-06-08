@@ -1,4 +1,4 @@
-# 🏭 스마트 공장 모니터링 프로그램
+# 🏭 생산라인 모니터링 채팅 시스템
 
 ![Backend](https://img.shields.io/badge/Backend-Python%20%7C%20Flask-black)
 ![Frontend](https://img.shields.io/badge/Frontend-HTML%20%7C%20CSS%20%7C%20JavaScript-blue)
@@ -8,7 +8,7 @@
 ![Hardware](https://img.shields.io/badge/Hardware-RaspberryPi-red)
 ![Database](https://img.shields.io/badge/Database-MySQL-lightgrey)
 
-생산라인 불량 검출, 실시간 모니터링, 관리자 채팅 및 하드웨어 제어 기능을 통합한 스마트 공장 모니터링 프로그램입니다.
+생산라인 불량 검출, 실시간 모니터링, 관리자 간 실시간 채팅 기능을 통합한 생산라인 모니터링 채팅 시스템입니다.
 
 ---
 
@@ -113,7 +113,7 @@ Flask 서버를 중심으로 현장 관리자(MFC), 현장 카메라(C# WinForms
 
 ## 👨‍💻 구현 내용
 - Python Flask 기반 API 서버 구축
-- HTML, CSS, JavaScript 기반 Web Dashboard 화면 구현
+- HTML, CSS, JavaScript 기반 Web Dashboard 구현
 - MFC 기반 현장 관리자 프로그램 구현
 - C# WinForms 기반 현장 카메라 프로그램 구현
 - YOLO 및 OpenCV 기반 실시간 불량 검출 기능 구현
@@ -124,12 +124,39 @@ Flask 서버를 중심으로 현장 관리자(MFC), 현장 카메라(C# WinForms
 
 ---
 
+## 🙋 담당 역할
+- Python Flask 기반 API 서버 개발
+- 로그인 및 회원 관리 기능 구현
+- Socket.IO 기반 실시간 채팅 기능 구현
+- Web Dashboard 기반 실시간 모니터링 화면 구현
+- 생산라인 상태 데이터 저장 및 조회 기능 구현
+- 불량 검출 결과 저장, 조회 및 통계 기능 구현
+- MySQL 데이터베이스 설계 및 연동
+
+---
+
+## ⚙️ 문제 해결 경험
+
+### 🔐 로그인 및 세션 관리 문제
+- 동일 계정의 중복 로그인과 비정상 종료 시 사용자 상태가 정확하게 관리되지 않는 문제가 발생
+- 중복 로그인 감지, 강제 로그아웃 및 Heartbeat 기반 상태 관리 기능을 구현하여 해결
+
+### 💬 실시간 채팅 동기화 문제
+- 메시지 삭제, 읽음 상태 및 미확인 메시지 정보가 상대방 화면에 즉시 반영되지 않는 문제가 발생
+- Socket.IO 이벤트 기반 실시간 동기화 구조를 적용하여 해결
+
+### 👥 사용자 접속 상태 관리 문제
+- 브라우저 종료 및 네트워크 끊김 시 사용자 접속 상태를 정확하게 관리하기 어려운 문제가 발생
+- Heartbeat 기반 사용자 상태 관리 기능을 적용하여 실시간 접속 상태를 유지하도록 개선
+
+---
+
 ## 🚀 프로젝트 특징
 - AI 기반 불량 검출, 실시간 모니터링, 채팅 기능을 하나의 시스템으로 통합
 - Flask 서버 중심의 다중 클라이언트 기반 시스템 구조 설계
 - Web, MFC, WinForms를 역할별로 분리한 시스템 구성
-- Socket.IO를 활용한 관리자 간 실시간 커뮤니케이션 구현
-- Raspberry Pi, GPIO, RS232를 활용한 하드웨어 연동 기능 포함
+- Socket.IO 기반 실시간 데이터 및 채팅 동기화 구현
+- Raspberry Pi, GPIO, RS232 기반 하드웨어 연동 기능 포함
 
 ---
 
